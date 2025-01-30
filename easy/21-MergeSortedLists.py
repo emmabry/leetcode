@@ -27,4 +27,4 @@ def mergeTwoLists(list1, list2):
     
     return output.next
 
-print(mergeTwoLists(list1, list2)) # 1 2
+print(mergeTwoLists(list1, list2))
