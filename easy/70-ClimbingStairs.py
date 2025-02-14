@@ -5,12 +5,17 @@
 # Recursion
 
 def climbStairs(n):
-    if n == 0:
-        return 0
-    elif n == 1 or n == 2:
+    if n <= 3:
         return n
     else: 
-        return climbStairs(n-1) + climbStairs(n-2)
+        minus1 = 3
+        minus2 = 2
+        current = 0
+        for _ in range(3,n):
+            current = minus1+minus2
+            minus2 = minus1
+            minus1 = current
+        return current
     
 n = 3
 
