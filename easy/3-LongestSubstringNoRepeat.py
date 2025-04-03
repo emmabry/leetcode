@@ -11,7 +11,19 @@ def lengthOfLongestSubstring(s):
                     maxLen = len(s[i:n])
             n -= 1
     return maxLen
-    
+
+# Sliding Window
+def lengthOfLongestSubstring(s):
+    left = 0
+    maxLen = 0
+    charset = set()
+    for i in range(len(s)):
+        while s[i] in charset:
+           charset.remove(s[left])
+           left += 1
+        charset.add(s[i])
+        maxLen = max(maxLen, i - left + 1)
+    return maxLen
 
 s = "dvdf"
 
